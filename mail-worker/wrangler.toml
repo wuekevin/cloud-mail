@@ -1,27 +1,3 @@
-name = "wuemail"
-main = "src/index.js"
-compatibility_date = "2025-06-04"
-keep_vars = true
-
-[observability]
-enabled = true
-
-[[d1_databases]]
-binding = "db"			#d1数据库绑定名默认不可修改
-database_name = "wuemail"		#d1数据库名字
-database_id = "157882ad-3bba-4a66-8bd9-db20bac14894"		#d1数据库id
-
-[[kv_namespaces]]
-binding = "kv"			#kv绑定名默认不可修改
-id = "ab44570cd4d44929bfc0ef771cb1d5a5"					#kv数据库id
-
-[[r2_buckets]]
-binding = "r2"			#r2对象存储绑定名默认不可修改
-bucket_name = "wuemail"		#r2对象存储桶的名字
-
-[[send_email]]
-name = "email"			#CF发件, 配置后优先使用
-#[[d1_databases]]
 #binding = "db"			# D1 binding name; do not change
 #database_name = ""		# D1 database name
 #database_id = ""		# D1 database id
@@ -36,6 +12,7 @@ name = "email"			#CF发件, 配置后优先使用
 
 #[[send_email]]
 #name = "email"			# Cloudflare Email Sending; used first if configured
+>>>>>>> main
 
 [[send_email]]
 name = "forward"		# Forward in-app mail to other verified addresses; not limited to one address
@@ -62,6 +39,7 @@ new_sqlite_classes = ["MailHub"]
 
 
 [vars]
+<<<<<<< main
 ai_model = "@cf/zai-org/glm-4.7-flash"			#ai模型,不填默认使用@cf/meta/llama-3.1-8b-instruct-fast
 analysis_cache = false			#是否开启分析数据缓存
 project_link = false  #显示登录界面GitHub
@@ -69,6 +47,7 @@ orm_log = false			#是否sql日志
 domain = ["wuename.com"]				#邮件域名可可配置多个 示例: ["example1.com","example2.com"]
 admin = "admin@wuename.com"					#管理员的邮箱	示例: admin@example.com
 jwt_secret = "wFNCr7SqBweumtosxpSKhtBKyB97HGjb"			#jwt令牌的密钥,随便填一串字符串
+=======
 #ai_model = ""			# AI model; defaults to @cf/meta/llama-3.1-8b-instruct-fast
 #analysis_cache = false			# Enable analytics cache
 #orm_log = false			# SQL logging
@@ -76,6 +55,7 @@ jwt_secret = "wFNCr7SqBweumtosxpSKhtBKyB97HGjb"			#jwt令牌的密钥,随便填�
 #admin = ""					# Admin email, e.g. admin@example.com
 #password = ""				# Admin password; used on init if the admin user does not exist
 #jwt_secret = ""			# JWT secret; any random string
+>>>>>>> main
 
 [build]
 command = "pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue run build"
